@@ -19,7 +19,6 @@
       <div class="sync-status" id="sync-status">Lokal lagring</div>
       <nav class="tabs" aria-label="Huvudmeny">
         <button class="tab active" data-view="femkamp">Femkamp</button>
-        <button class="tab" data-view="tipspromenad">Tipspromenad</button>
         <button class="tab" data-view="resultat">Resultat</button>
       </nav>
     </div>
@@ -32,25 +31,6 @@
         <button class="button secondary" id="new-team">+ Nytt lag</button>
       </div>
       <div id="team-list" class="team-list"></div>
-    </section>
-
-    <section id="tipspromenad" class="view">
-      <div class="section-heading">
-        <div><p class="eyebrow">PERSONLIG TÄVLING</p><h2>Tipspromenad Slottet</h2></div>
-        <span class="pill">5 stopp + utslag</span>
-      </div>
-      <div class="card quiz-card">
-        <p class="muted">Upptäck Tullgarns slottspark. Välj 1, X eller 2 och fyll i utslagsfrågan.</p>
-        <label class="field-label" for="quiz-name">Ditt namn</label>
-        <input id="quiz-name" class="text-input" placeholder="Skriv ditt namn" autocomplete="name">
-        <div id="quiz-questions"></div>
-        <div class="quiz-submit-row">
-          <label class="field-label" for="tie-break">Utslag: antal fönster</label>
-          <input id="tie-break" class="number-input" type="number" min="0" placeholder="0">
-          <button class="button primary" id="save-quiz">Skicka in</button>
-        </div>
-      </div>
-      <div class="card"><div class="card-title"><h3>Topplista</h3><span class="muted">rätt svar först</span></div><div id="quiz-leaderboard"></div></div>
     </section>
 
     <section id="resultat" class="view">

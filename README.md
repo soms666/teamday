@@ -1,6 +1,6 @@
 # OAS DevOps TeamDay
 
-Mobil webbapp för femkamp och Tipspromenad Slottet. Varje lag kan ha en egen telefon; poängen sparas lokalt direkt och synkas automatiskt till Supabase när konfigurationen är ifylld.
+Mobil webbapp för femkampen. Tipspromenaden genomförs analogt för att undvika telefonfusk. Varje lag kan ha en egen telefon; poängen sparas lokalt direkt och synkas automatiskt till Supabase när konfigurationen är ifylld.
 
 ## Supabase, en gång
 
