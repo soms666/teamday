@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css">
   <style>.sync-status{display:inline-block;margin-top:18px;color:#c7d6cb;font-size:12px}.sync-status.ok{color:#a8d7aa}.sync-status.busy{color:#dcae54}.sync-status.error{color:#f0a49a}</style>
   <style>.team-detail{border-top:1px solid #dfe4da;margin-top:14px;padding-top:16px}.team-detail h3{margin:0 0 12px}.detail-table{width:100%;border-collapse:collapse;font-size:13px}.detail-table th,.detail-table td{text-align:left;padding:9px 5px;border-bottom:1px solid #dfe4da}.detail-table th:not(:first-child),.detail-table td:not(:first-child){text-align:right}.team-link{display:block;width:100%;border:0;background:transparent;text-align:left;color:inherit;font:inherit;padding:0;cursor:pointer}.team-link:hover strong{text-decoration:underline}</style>
+  <style>.team-picker-label{display:block;margin-top:14px;color:#6c756d;font-size:12px;font-weight:700}.team-picker{margin-top:5px;min-width:190px;border:1px solid #c9a45c;border-radius:7px;background:#fffdf8;color:#17251f;padding:9px;font:inherit}</style>
 </head>
 <body>
   <header class="hero">
@@ -27,7 +28,7 @@
   <main class="shell">
     <section id="femkamp" class="view active-view">
       <div class="section-heading">
-        <div><p class="eyebrow">LAGTÄVLING</p><h2>Femkampen</h2></div>
+        <div><p class="eyebrow">LAGTÄVLING</p><h2>Femkampen</h2><label class="team-picker-label" for="team-picker">Det här är mitt lag</label><select id="team-picker" class="team-picker"></select></div>
         <button class="button secondary" id="new-team">+ Nytt lag</button>
       </div>
       <div id="team-list" class="team-list"></div>
