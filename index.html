@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10261e">
+  <title>OAS DevOps TeamDay</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>.sync-status{display:inline-block;margin-top:18px;color:#c7d6cb;font-size:12px}.sync-status.ok{color:#a8d7aa}.sync-status.busy{color:#dcae54}.sync-status.error{color:#f0a49a}</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">OAS DEVOPS · TULLGARN 2026</p>
+      <h1>TeamDay</h1>
+      <p class="intro">Femkamp, upptäcktsfärd och tävlingsnerver — samlat på ett ställe.</p>
+      <div class="sync-status" id="sync-status">Lokal lagring</div>
+      <nav class="tabs" aria-label="Huvudmeny">
+        <button class="tab active" data-view="femkamp">Femkamp</button>
+        <button class="tab" data-view="tipspromenad">Tipspromenad</button>
+        <button class="tab" data-view="resultat">Resultat</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section id="femkamp" class="view active-view">
+      <div class="section-heading">
+        <div><p class="eyebrow">LAGTÄVLING</p><h2>Femkampen</h2></div>
+        <button class="button secondary" id="new-team">+ Nytt lag</button>
+      </div>
+      <div id="team-list" class="team-list"></div>
+    </section>
+
+    <section id="tipspromenad" class="view">
+      <div class="section-heading">
+        <div><p class="eyebrow">PERSONLIG TÄVLING</p><h2>Tipspromenad Slottet</h2></div>
+        <span class="pill">5 stopp + utslag</span>
+      </div>
+      <div class="card quiz-card">
+        <p class="muted">Upptäck Tullgarns slottspark. Välj 1, X eller 2 och fyll i utslagsfrågan.</p>
+        <label class="field-label" for="quiz-name">Ditt namn</label>
+        <input id="quiz-name" class="text-input" placeholder="Skriv ditt namn" autocomplete="name">
+        <div id="quiz-questions"></div>
+        <div class="quiz-submit-row">
+          <label class="field-label" for="tie-break">Utslag: antal fönster</label>
+          <input id="tie-break" class="number-input" type="number" min="0" placeholder="0">
+          <button class="button primary" id="save-quiz">Skicka in</button>
+        </div>
+      </div>
+      <div class="card"><div class="card-title"><h3>Topplista</h3><span class="muted">rätt svar först</span></div><div id="quiz-leaderboard"></div></div>
+    </section>
+
+    <section id="resultat" class="view">
+      <div class="section-heading"><div><p class="eyebrow">STÄLLNING</p><h2>Resultat</h2></div><button class="button secondary" id="export-data">Exportera data</button></div>
+      <div class="card"><div id="leaderboard"></div></div>
+      <div class="card import-card"><h3>Flytta resultat mellan mobiler</h3><p class="muted">Exportera från en telefon och importera JSON-filen på resultattavlans telefon.</p><input id="import-file" type="file" accept="application/json"><button class="button secondary" id="clear-data">Rensa lokala data</button></div>
+    </section>
+  </main>
+
+  <template id="team-template">
+    <article class="team-card">
+      <div class="team-header"><div><span class="team-number"></span><input class="team-name" placeholder="Lagnamn"></div><strong class="team-total">0 p</strong></div>
+      <div class="score-head"><span>Deltagare</span><span>Pilbåge</span><span>Lasso</span><span>Luftpistol</span><span>Hästskor</span><span>Balanscowboy</span><span></span></div>
+      <div class="members"></div>
+      <button class="add-member">+ Lägg till deltagare</button>
+      <div class="team-footer"><span class="muted">Lagets totalpoäng summeras automatiskt</span><button class="delete-team" aria-label="Ta bort lag">Ta bort</button></div>
+    </article>
+  </template>
+  <template id="member-template"><div class="member-row"><input class="member-name" placeholder="Deltagare"><input class="score" data-branch="0" type="number" min="0" placeholder="0" aria-label="Pilbåge"><input class="score" data-branch="1" type="number" min="0" placeholder="0" aria-label="Lasso"><input class="score" data-branch="2" type="number" min="0" placeholder="0" aria-label="Luftpistol"><input class="score" data-branch="3" type="number" min="0" placeholder="0" aria-label="Hästskor"><input class="score" data-branch="4" type="number" min="0" placeholder="0" aria-label="Balanscowboy"><button class="delete-member" aria-label="Ta bort deltagare">×</button></div></template>
+  <script src="supabase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
