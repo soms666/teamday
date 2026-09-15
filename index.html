@@ -7,6 +7,7 @@
   <title>OAS DevOps TeamDay</title>
   <link rel="stylesheet" href="styles.css">
   <style>.sync-status{display:inline-block;margin-top:18px;color:#c7d6cb;font-size:12px}.sync-status.ok{color:#a8d7aa}.sync-status.busy{color:#dcae54}.sync-status.error{color:#f0a49a}</style>
+  <style>.team-detail{border-top:1px solid #dfe4da;margin-top:14px;padding-top:16px}.team-detail h3{margin:0 0 12px}.detail-table{width:100%;border-collapse:collapse;font-size:13px}.detail-table th,.detail-table td{text-align:left;padding:9px 5px;border-bottom:1px solid #dfe4da}.detail-table th:not(:first-child),.detail-table td:not(:first-child){text-align:right}.team-link{display:block;width:100%;border:0;background:transparent;text-align:left;color:inherit;font:inherit;padding:0;cursor:pointer}.team-link:hover strong{text-decoration:underline}</style>
 </head>
 <body>
   <header class="hero">
@@ -53,8 +54,8 @@
 
     <section id="resultat" class="view">
       <div class="section-heading"><div><p class="eyebrow">STÄLLNING</p><h2>Resultat</h2></div><button class="button secondary" id="export-data">Exportera data</button></div>
-      <div class="card"><div id="leaderboard"></div></div>
-      <div class="card import-card"><h3>Flytta resultat mellan mobiler</h3><p class="muted">Exportera från en telefon och importera JSON-filen på resultattavlans telefon.</p><input id="import-file" type="file" accept="application/json"><button class="button secondary" id="clear-data">Rensa lokala data</button></div>
+      <div class="card"><div id="leaderboard"></div><div id="team-detail" class="team-detail"></div></div>
+      <div class="card import-card"><h3>Reservkopiering</h3><p class="muted">Normalt behövs detta inte eftersom Supabase delar resultaten mellan mobiler. Exportera bara om du vill ha en extra kopia.</p><input id="import-file" type="file" accept="application/json"><button class="button secondary" id="clear-data">Rensa lokala data</button></div>
     </section>
   </main>
 
